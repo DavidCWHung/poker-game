@@ -121,7 +121,54 @@ namespace PokerGame
             }
             else
             {
-                Console.WriteLine("It's a draw.");
+                // Tiebreaker rule for Flush, HighCard.
+                if ((playerHand == Hand.HighCard) || (playerHand == Hand.Flush))
+                {
+                    int i = 4;
+                    bool isWinnerFound = false;
+                    string winner = "";
+
+                    do
+                    {
+                        if (sortedPlayerHand[i].MyValue > sortedComputerHand[i].MyValue)
+                        {
+                            winner = "Player";
+                            isWinnerFound = true;
+                        }
+                        else if (sortedPlayerHand[i].MyValue < sortedComputerHand[i].MyValue)
+                        {
+                            winner = "Computer";
+                            isWinnerFound = true;
+                        }
+
+                        i--;
+                    } while (i >= 0 && !isWinnerFound);
+                    
+                    if (isWinnerFound)
+                    {
+                        Console.WriteLine("{0} wins!", winner);
+                    }
+                    else
+                    {
+                        Console.WriteLine("It's a draw.");
+                    }
+                }
+                else
+                {
+                    // Tiebreaker rule for FourOfAKind, FullHouse, Straight, ThreeOfAKind; TwoPair and OnePair [to be refined].
+                    if (playerHandEvaluator.TieBreakerValue > computerHandEvaluator.TieBreakerValue)
+                    {
+                        Console.WriteLine("Player wins!");
+                    }
+                    else if (playerHandEvaluator.TieBreakerValue < computerHandEvaluator.TieBreakerValue)
+                    {
+                        Console.WriteLine("Computer wins!");
+                    }
+                    else
+                    {
+                        Console.WriteLine("It's a draw.");
+                    }
+                }
             }
         }
     }

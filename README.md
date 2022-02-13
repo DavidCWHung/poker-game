@@ -1,8 +1,9 @@
 # poker-game
 
-[<img src='https://github.com/DavidCWHung/poker-game/blob/main/poker-game1280x850.jpg' alt='poker-game' width='1500'>]
-
 ### Poker Game
+
+<img src='https://github.com/DavidCWHung/poker-game/blob/main/poker-game1280x850.jpg' alt='poker-game' height='300' width='1500'>
+
 I made this project for taking up some challenges to learn something new other than my normal programming classes during the development process (and also expressing my passion for poker games).  
 
 It is a simplified poker game, a Console Application written in C# language.  The code of this game will be maintained and further optimized with more features.  Please feel free to let me know if you have any thoughts on improving this application.:smile:

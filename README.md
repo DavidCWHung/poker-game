@@ -1,5 +1,7 @@
 # poker-game
 
+[<img src='https://github.com/DavidCWHung/poker-game/blob/main/poker-game1280x850.jpg' alt='poker-game' width='1500'>]
+
 ### Poker Game
 I made this project for taking up some challenges to learn something new other than my normal programming classes during the development process (and also expressing my passion for poker games).  
 

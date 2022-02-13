@@ -9,6 +9,15 @@ namespace PokerGame
     public class HandEvaluator
     {
         private Card[] cards;
+        private Value tieBreakerValue;
+
+        public Value TieBreakerValue
+        {
+            get
+            {
+                return this.tieBreakerValue;
+            }
+        }
 
         public HandEvaluator(Card[] sortedHand)
         {
@@ -46,6 +55,7 @@ namespace PokerGame
             else if (IsOnePair())
             {
                 hand = Hand.OnePair;
+
             }
             else
             {
@@ -64,6 +74,7 @@ namespace PokerGame
                 || (cards[1].MyValue == cards[2].MyValue && cards[1].MyValue == cards[3].MyValue && cards[1].MyValue == cards[4].MyValue))
             {
                 isFourOfAKind = true;
+                this. tieBreakerValue = cards[2].MyValue;
             }
 
             return isFourOfAKind;
@@ -79,6 +90,7 @@ namespace PokerGame
                 (cards[0].MyValue == cards[1].MyValue && cards[2].MyValue == cards[3].MyValue && cards[2].MyValue == cards[4].MyValue))
             {
                 isFullHouse = true;
+                this.tieBreakerValue = cards[2].MyValue;
             }
 
             return isFullHouse;
@@ -125,6 +137,11 @@ namespace PokerGame
                 }
             } while (isStraight && i < 5);
 
+            if (isStraight)
+            {
+                this.tieBreakerValue = cards[4].MyValue;
+            }
+
             return isStraight;
         }
 
@@ -135,11 +152,12 @@ namespace PokerGame
             // Either Card 1, 2 and 3 are of the same value and Card 4 and 5 are of different value OR
             // Card 2, 3, 4 are of the same value and Card 1 and 5 are of different value OR
             // Card 3, 4 and 5 are of the same value and Card 1 and 2 are of different value.
-            if ((cards[0].MyValue == cards[1].MyValue && cards[0].MyValue == cards[2].MyValue && cards[3].MyValue != cards[4].MyValue) ||
-                (cards[1].MyValue == cards[2].MyValue && cards[1].MyValue == cards[3].MyValue && cards[0].MyValue != cards[4].MyValue) ||
-                (cards[2].MyValue == cards[3].MyValue && cards[2].MyValue == cards[4].MyValue && cards[0].MyValue != cards[1].MyValue))
+            if ((cards[0].MyValue == cards[1].MyValue && cards[0].MyValue == cards[2].MyValue) ||
+                (cards[1].MyValue == cards[2].MyValue && cards[1].MyValue == cards[3].MyValue) ||
+                (cards[2].MyValue == cards[3].MyValue && cards[2].MyValue == cards[4].MyValue))
             {
                 isThreeOfAKind = true;
+                this.tieBreakerValue = cards[2].MyValue;
             }
 
             return isThreeOfAKind;
@@ -157,6 +175,7 @@ namespace PokerGame
                 (cards[1].MyValue == cards[2].MyValue && cards[3].MyValue == cards[4].MyValue))
             {
                 isTwoPair = true;
+                this.tieBreakerValue = cards[3].MyValue;
             }
 
             return isTwoPair;
@@ -167,10 +186,15 @@ namespace PokerGame
             bool isOnePair = false;
 
             // Card 1,2 OR Card 2,3 OR Card 3,4 OR Card 4,5 are of the same value.
-            if (cards[0].MyValue == cards[1].MyValue || cards[1].MyValue == cards[2].MyValue || 
-                cards[2].MyValue == cards[3].MyValue || cards[3].MyValue == cards[4].MyValue)
+            if (cards[0].MyValue == cards[1].MyValue || cards[1].MyValue == cards[2].MyValue) 
             {
                 isOnePair = true;
+                this.tieBreakerValue = cards[1].MyValue;
+            }
+            else if (cards[2].MyValue == cards[3].MyValue || cards[3].MyValue == cards[4].MyValue)
+            {
+                isOnePair = true;
+                this.tieBreakerValue = cards[3].MyValue;
             }
 
             return isOnePair;

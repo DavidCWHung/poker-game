@@ -1,5 +1,3 @@
-# poker-game
-
 ### Poker Game
 
 <img src='https://github.com/DavidCWHung/poker-game/blob/main/poker-game1280x850.jpg' alt='poker-game' height='300' width='1500'>

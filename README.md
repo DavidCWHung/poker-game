@@ -9,9 +9,9 @@ This is a simplified poker game, a Console Application written in C# language.  
 The code of this application will be maintained and further optimized with more game features.  Please feel free to let me know if you have any thoughts on improving this application or anything!:smile:
 
 <p float="left"> 
-  <img src='https://github.com/DavidCWHung/DavidCWHung/blob/main/showcase-1-tiebreaker-highcard.png' alt='showcase-1' width='300'>  
-  <img src='https://github.com/DavidCWHung/DavidCWHung/blob/main/showcase-2-invalid-input-flush-threeofakind.png' alt='showcase-2' width='300'>
-  <img src='https://github.com/DavidCWHung/DavidCWHung/blob/main/showcase-3-fullhouse.png' alt='showcase-3' width='300'>
+  <img src='https://github.com/DavidCWHung/DavidCWHung/blob/main/showcase-1-tiebreaker-highcard.png' alt='showcase-1' width='250'>  
+  <img src='https://github.com/DavidCWHung/DavidCWHung/blob/main/showcase-2-invalid-input-flush-threeofakind.png' alt='showcase-2' width='250'>
+  <img src='https://github.com/DavidCWHung/DavidCWHung/blob/main/showcase-3-fullhouse.png' alt='showcase-3' width='250'>
 </p>
 
 Skills: .Net Framework, C#

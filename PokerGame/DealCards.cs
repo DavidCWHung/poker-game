@@ -44,8 +44,17 @@ namespace PokerGame
 
         public void SortHand()
         {
-            var queryPlayer = this.playerHand.OrderBy(hand => hand.MyValue);
-            var queryComputer = this.computerHand.OrderBy(hand => hand.MyValue);
+            //var queryPlayer = this.playerHand.OrderBy(hand => hand.MyValue);
+
+            var queryPlayer = from hand in this.playerHand
+                              orderby hand.MyValue
+                              select hand;
+
+            //var queryComputer = this.computerHand.OrderBy(hand => hand.MyValue);
+
+            var queryComputer = from hand in this.computerHand
+                                orderby hand.MyValue
+                                select hand;
 
             int i = 0;
             foreach (var element in queryPlayer.ToList())

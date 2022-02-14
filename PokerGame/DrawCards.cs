@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: David Hung
+ * Created: 2022-02-06
+ * Updated: 2022-02-14
+ */
+
+using System;
 using System.Text;
 
 namespace PokerGame

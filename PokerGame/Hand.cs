@@ -1,4 +1,10 @@
-﻿namespace PokerGame
+﻿/*
+ * Author: David Hung
+ * Created: 2022-02-06
+ * Updated: 2022-02-14
+ */
+
+namespace PokerGame
 {
     /// <summary>
     /// Specifies a poker hand.

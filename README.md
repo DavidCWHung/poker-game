@@ -15,5 +15,3 @@ The code of this application will be maintained and further optimized with more 
 </p>
 
 Skills: .Net Framework, C#
-
-[<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/github.svg' alt='github' height='40'>](https://github.com/DavidCWHung)  [<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/linkedin.svg' alt='linkedin' height='40'>](https://www.linkedin.com/in/david-hung-9180b5a4/)  
